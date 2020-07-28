@@ -11,6 +11,20 @@ import Requests from './screens/Requests'
 import RequestDetail from './screens/RequestDetail'
 import MainButton from './components/MainButton'
 import { IdentityProvider } from './identity-manager'
+import { APIClient, Openlaw } from "openlaw";
+
+apiClient = new APIClient("https://lib.openlaw.io/api/v1/default");
+// get NFT gallery contract template, from : https://lib.openlaw.io/web/default/template/Host%20Digital%20Art%20Gallery
+apiClient.getTemplateById("0x03ff6ead4a5867d161d775fad50cac3c370b82e3");
+// get contract of specific NFT, using NFT ID
+apiClient.getTemplateById("39437de827f8374899d7f7e817193894749872394");
+// Contract template :
+// The undersigned hereby commits a transfer of non-fungible tokens (ERC-721) and their associated rights for an exchange with the following details:
+
+// NFT Registry Address: 0x03ff6ead4a5867d161d775fad50cac3c370b82e3
+// Payment Amount: [[Payment Amount]]
+// Token: 0x8ad3aa5d5ff084307d28c8f514d7a193b2bfe725
+// can be deployed once on mainnet
 
 const App = () => {
   const {
